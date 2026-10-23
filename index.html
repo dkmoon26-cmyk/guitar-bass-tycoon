@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>기타·베이스 수리점</title>
+  <meta name="theme-color" content="#152521">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="수리점">
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" type="image/png" href="icons/icon-192.png">
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+  <style>
+body.booting{overflow:hidden;background:#152521}
+body.booting>:not(#startup-screen):not(script){visibility:hidden!important}
+#startup-screen{position:fixed;inset:0;z-index:30000;background:#10231b;color:#f4f1e9;display:grid;place-items:center;padding:24px;font-family:system-ui,sans-serif;text-align:center}
+#startup-screen[hidden]{display:none!important}
+#startup-screen .boot-panel{width:min(320px,90vw);position:relative;z-index:1}
+#startup-screen h1{font-size:23px;margin:18px 0 10px}
+#startup-screen p{font-size:13px;line-height:1.7}
+#startup-screen .boot-track{height:3px;background:#405a50;border-radius:3px;margin-top:24px;overflow:hidden}
+#startup-screen .boot-fill{height:100%;width:0;background:#c5d9ce}
+</style>
+<link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/theme.css">
+  <link rel="stylesheet" href="css/title.css">
+  <link rel="stylesheet" href="css/onboarding.css">
+  <link rel="stylesheet" href="css/parts-art.css">
+  <link rel="stylesheet" href="css/systems.css">
+  <link rel="stylesheet" href="css/expansion-art.css">
+  <link rel="stylesheet" href="css/expansion.css">
+  <link rel="stylesheet" href="css/flow.css">
+</head>
+<body class="booting">
+  <section id="startup-screen" role="status" aria-live="polite" aria-label="게임 준비 중" aria-busy="true">
+    <div class="boot-scene" aria-hidden="true"></div>
+    <div class="boot-panel"><div class="boot-guitar" aria-hidden="true"><svg viewBox="0 0 80 120"><path d="M38 12h5v49c13-8 22 5 15 16-5 7 8 17-1 26-12 11-35 8-39-5-4-11 9-17 5-25-4-10 6-19 15-12Z" fill="none" stroke="currentColor" stroke-width="2"/><path d="M37 4h8v13h-8zM39 15v79m3-79v79M31 91h18" stroke="currentColor" fill="none"/><circle cx="40" cy="78" r="7" stroke="currentColor" fill="none"/></svg></div>
+    <p class="boot-eyebrow">INSTRUMENT WORKSHOP</p><h1>공방을 준비하고 있어요</h1><p id="startup-message">작업등과 악기를 준비하는 중입니다.</p>
+    <div class="boot-track" role="progressbar" aria-label="게임 준비 단계" aria-valuemin="0" aria-valuemax="5" aria-valuenow="0"><div class="boot-fill" id="startup-progress"></div></div><small id="startup-count">준비 단계 0 / 5</small>
+    <button type="button" id="startup-retry" hidden onclick="location.reload()">다시 열기</button></div>
+  </section>
+  <noscript><style>body.booting #startup-screen{display:none!important}body.booting>noscript{visibility:visible!important}</style><p style="position:fixed;inset:20%;z-index:40000;color:white;background:#152521;padding:24px">게임을 시작하려면 브라우저의 JavaScript를 켜주세요.</p></noscript>
+  <script src="js/core/startup.js" onerror="document.getElementById('startup-message').textContent='준비 화면을 불러오지 못했어요. 다시 열어주세요.';document.getElementById('startup-retry').hidden=false;"></script>
+  <header class="app-header">
+    <div><small class="brand-eyebrow">INSTRUMENT WORKSHOP</small><h1 id="shop-name-heading">기타·베이스 수리점</h1></div>
+    <button class="header-settings" type="button" onclick="openSettings('game')" aria-label="설정 열기">⚙</button>
+    <span id="equipped-title-label" hidden></span><span id="slot-label" hidden></span>
+  </header>
+  <section class="quick-status" aria-label="매장 상태">
+    <span><small>영업일</small><strong id="day">1일차</strong></span>
+    <span><small>보유 자금</small><strong id="money">₩300,000</strong></span>
+    <span><small>활력</small><strong id="owner-energy-text">100/100</strong></span>
+  </section>
+  <nav class="tabs primary-nav" role="tablist" aria-label="주요 메뉴">
+    <button type="button" class="tab active" data-tab="home">매장</button>
+    <button type="button" class="tab" data-tab="inventory">작업실</button>
+    <button type="button" class="tab" data-tab="street">거리</button>
+    <button type="button" class="tab" data-tab="management">관리</button>
+  </nav>
+  <nav id="flow-subnav" aria-label="현재 메뉴 안에서 이동" hidden></nav>
+  <main id="game-main">
+  <section class="panel active" id="panel-home" aria-label="내 매장">
+    <div id="shop-hero"></div>
+    <section class="today-section"><div class="section-heading"><h2>오늘 할 일</h2><small>바로 눌러 진행하세요</small></div><div id="today-actions"></div></section>
+    <section class="today-section"><div class="section-heading"><h2>진행 중 의뢰</h2><button type="button" class="text-button" onclick="openGameTab('orders')">전체 보기 ›</button></div><div id="home-quests"></div></section>
+    <details class="shop-details"><summary>매장 현황 · 목표 · 부품 재고</summary>
+      <div class="shop-detail-grid"><span>매장 등급 <strong id="store-level">Lv.1</strong></span><span>평판 <strong id="rep">1</strong></span></div>
+      <div class="status-strip"><div class="owner-energy"><div class="owner-energy-track" id="owner-energy-track" role="progressbar" aria-label="활력" aria-valuemin="0" aria-valuemax="100"><div class="owner-energy-fill" id="owner-energy-fill"></div></div></div>
+      <button class="owner-energy store-progress" onclick="openGameTab('management')"><span id="store-progress-title"></span><small id="store-progress-hint"></small><div class="owner-energy-track"><div class="owner-energy-fill" id="store-progress-fill"></div></div></button></div>
+      <p id="home-summary"></p><p id="home-goal-label"></p><div class="home-progress"><span id="home-goal-progress"></span></div>
+      <button class="parts-bar" id="parts-bar" type="button" onclick="openGameTab('parts')"></button>
+      <button class="btn-secondary" onclick="openGameTab('management')">매장 경영·성장 보기</button>
+    </details>
+    <details class="first-guide"><summary>처음이라면 · 운영 가이드</summary><div id="day1-checklist-wrap"></div><button class="btn-secondary" onclick="startTutorial(true)">튜토리얼 열기</button></details>
+  </section>
+  <section class="panel" id="panel-events"><div id="events-content"></div></section>
+  <section class="panel" id="panel-records"><div id="records-content"></div></section>
+  <div class="secondary-heading" id="secondary-heading" hidden><button class="text-button" onclick="openGameTab('more')">‹ 관리</button><h2 id="secondary-title"></h2></div>
+  <section class="panel" id="panel-craft" aria-label="커스텀 제작"><div id="craft-content"></div></section>
+  <section class="panel" id="panel-town" aria-label="음악의 거리"><div id="town-content"></div></section>
+  <!-- 시장 -->
+  <div class="panel" id="panel-market">
+    <div class="market-refresh">
+      <button id="market-refresh-btn" onclick="refreshMarket()">🔄 시장 새로고침 (₩5,000)</button>
+    </div>
+    <div class="market-refresh" style="display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-top:10px;">
+      <strong style="color:var(--muted);">종류</strong>
+      <button class="btn-buy market-filter active" data-market-filter="all" onclick="setMarketFilter('all')">전체</button>
+      <button class="btn-buy market-filter" data-market-filter="guitar" onclick="setMarketFilter('guitar')">기타</button>
+      <button class="btn-buy market-filter" data-market-filter="bass" onclick="setMarketFilter('bass')">베이스</button>
+      <button class="btn-buy market-filter" data-market-filter="acoustic" onclick="setMarketFilter('acoustic')">어쿠스틱</button>
+      <span class="market-filter-hint">필터로 기타/베이스만 볼 수 있어요</span>
+    </div>
+    <div class="item-list" id="market-list"></div>
+  </div>
+
+  <!-- 부품 상점 -->
+  <div class="panel" id="panel-parts">
+    <div class="section-title">부품 구매 <span id="parts-result-count" class="parts-result-count"></span></div>
+    <div class="parts-controls">
+      <label class="parts-search-wrap" for="parts-search">🔎 <input id="parts-search" type="search" placeholder="부품 이름 검색" autocomplete="off" oninput="setPartsSearch(this.value)"></label>
+      <div class="parts-filter-row" id="parts-filters" aria-label="부품 종류 필터">
+        <button type="button" class="parts-filter active" data-parts-filter="all" onclick="setPartsFilter('all')">전체</button>
+        <button type="button" class="parts-filter" data-parts-filter="strings" onclick="setPartsFilter('strings')">현·소모품</button>
+        <button type="button" class="parts-filter" data-parts-filter="pickup" onclick="setPartsFilter('pickup')">픽업</button>
+        <button type="button" class="parts-filter" data-parts-filter="hardware" onclick="setPartsFilter('hardware')">하드웨어</button>
+        <button type="button" class="parts-filter" data-parts-filter="fret" onclick="setPartsFilter('fret')">넥·프렛</button>
+        <button type="button" class="parts-filter" data-parts-filter="electronics" onclick="setPartsFilter('electronics')">전자부품</button>
+        <button type="button" class="parts-filter" data-parts-filter="rare" onclick="setPartsFilter('rare')">희귀 부품</button>
+      </div>
+    </div>
+    <div class="parts-shop-grid" id="parts-shop"></div>
+    <p style="font-size:0.8rem;color:var(--muted);margin-top:12px;text-align:center;">
+      수리할 때 필요한 부품을 미리 사두세요
+    </p>
+  </div>
+
+  <!-- 손님과 스토리 이벤트 -->
+  <div class="panel" id="panel-customers"><div id="customers-content"></div></div>
+
+  <!-- 창고 -->
+  <div class="panel" id="panel-inventory">
+    <div class="section-title">작업실 <span id="inv-count"></span></div>
+    <div class="inventory-controls">
+      <label class="parts-search-wrap" for="inventory-search">🔎 <input id="inventory-search" type="search" placeholder="악기 이름 검색" autocomplete="off" oninput="setInventorySearch(this.value)"></label>
+      <div class="parts-filter-row" aria-label="창고 필터">
+        <button type="button" class="parts-filter active" data-inventory-filter="all" onclick="setInventoryFilter('all')">전체</button>
+        <button type="button" class="parts-filter" data-inventory-filter="repair" onclick="setInventoryFilter('repair')">수리 대기</button>
+        <button type="button" class="parts-filter" data-inventory-filter="ready" onclick="setInventoryFilter('ready')">수리 완료</button>
+        <button type="button" class="parts-filter" data-inventory-filter="order" onclick="setInventoryFilter('order')">납품 가능</button>
+      </div>
+    </div>
+    <div class="item-list" id="inventory-list"></div>
+  </div>
+
+  <!-- 매장 (시설 + 경영 + 도감 통합) -->
+  <div class="panel" id="panel-management">
+    <div class="sub-tabs" role="tablist">
+      <button type="button" class="sub-tab active" data-mgmt-sub="ops" onclick="setMgmtSub('ops')">경영</button>
+      <button type="button" class="sub-tab" data-mgmt-sub="upgrades" onclick="setMgmtSub('upgrades')">시설 개선</button>
+    </div>
+    <div id="mgmt-sub-ops">
+      <div id="management-content"></div>
+    </div>
+    <div id="mgmt-sub-upgrades" hidden>
+      <div id="upgrades-list"></div>
+    </div>
+  </div>
+  <!-- 도감과 칭호는 매장 관리와 분리된 독립 메뉴 -->
+  <div class="panel" id="panel-collection">
+    <div class="section-title">📖 악기 도감</div>
+    <div id="collection-content"></div>
+  </div>
+  <div class="panel" id="panel-titles">
+    <div class="section-title">🏅 칭호 관리</div>
+    <div id="titles-content"></div>
+  </div>
+  <div class="panel" id="panel-upgrades" hidden style="display:none!important"></div>
+
+  <!-- 플레이어가 직접 하는 알바 -->
+  <div class="panel" id="panel-alba">
+    <div id="alba-content"></div>
+  </div>
+
+  <!-- 기록 -->
+  <div class="panel" id="panel-log">
+    <div class="log-heading"><div><div class="section-title">최근 기록</div><p class="panel-hint">최신 기록부터 표시합니다.</p></div><button type="button" class="btn-secondary" id="log-toggle" onclick="toggleLogHistory()">전체 기록 보기</button></div>
+    <div class="log" id="log-list"></div>
+  </div>
+
+  </main>
+  <div class="footer">
+    자동 저장됨 · 데이터는 이 기기에만 저장됩니다
+  </div>
+
+  <div class="next-day-dock" aria-label="영업일 진행">
+    <div class="next-day-dock-inner">
+      <div class="next-day-info">
+        <strong id="next-day-current">영업 1일차</strong>
+        <span id="next-day-cost">다음 영업일 유지비 ₩2,500</span>
+      </div>
+      <button class="next-day-global" onclick="requestNextDay()">다음 영업일 →</button>
+    </div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+  <div id="item-picker-overlay" class="picker-overlay" hidden aria-hidden="true">
+    <div class="picker-sheet" role="dialog" aria-modal="true" aria-labelledby="picker-title">
+      <h2 id="picker-title">납품할 악기 선택</h2>
+      <p class="picker-sub" id="picker-sub"></p>
+      <div class="picker-list" id="picker-list"></div>
+      <button type="button" class="picker-cancel" onclick="closeItemPicker()">취소</button>
+    </div>
+  </div>
+
+  <div id="title-screen" class="title-screen" hidden>
+    <div class="title-wrap" role="dialog" aria-modal="true" aria-label="타이틀 화면">
+      <section id="title-view-menu">
+        <p class="title-eyebrow">INSTRUMENT WORKSHOP</p>
+        <h1>기타·베이스<br><span>수리점</span></h1>
+        <p class="title-sub title-tagline">낡은 악기에 새로운 이야기를.</p>
+        <div class="title-menu title-main-actions">
+          <button type="button" id="title-continue" class="title-btn primary" onclick="titleContinue()"><span>이어하기 <span aria-hidden="true">→</span></span><small id="title-continue-info"></small></button>
+          <button type="button" id="title-new" class="title-btn" onclick="titleNewGame()">새로 시작</button>
+          <button type="button" class="title-btn" onclick="openSettings('title')">설정</button>
+        </div>
+        <p class="title-foot">자동 저장 · 데이터는 이 기기에만 저장됩니다</p>
+        <p class="title-foot" id="game-version" style="opacity:.6;margin-top:4px"></p>
+      </section>
+
+      <section id="title-view-settings" hidden>
+        <h2>⚙️ 설정</h2>
+        <div class="title-setting">
+          <div class="title-setting-label">💾 저장 · 불러오기<small id="settings-save-info"></small></div>
+          <div class="title-seg">
+            <button type="button" id="settings-save" onclick="openSlots('save','settings')">💾 저장하기</button>
+            <button type="button" id="settings-load" onclick="openSlots('continue','settings')">📂 불러오기</button>
+            <button type="button" id="settings-delete" onclick="openSlots('delete','settings')">🗑️ 삭제</button>
+          </div>
+          <small id="settings-save-hint" style="display:block;margin-top:7px;color:#a9a0b6;font-size:.74rem"></small>
+        </div>
+        <div class="title-setting">
+          <div class="title-setting-label">📦 백업 · 복원<small>저장 데이터를 코드로 옮기거나 되돌려요 (기기 변경·데이터 삭제 대비)</small></div>
+          <div class="title-seg"><button type="button" id="backup-open" onclick="openBackup()">📦 백업 · 복원 열기</button></div>
+        </div>
+        <div class="title-setting">
+          <div class="title-setting-label">글자 크기</div>
+          <div class="title-seg" id="seg-font">
+            <button type="button" data-v="normal" onclick="setFontScale('normal')">보통</button>
+            <button type="button" data-v="large" onclick="setFontScale('large')">크게</button>
+            <button type="button" data-v="xlarge" onclick="setFontScale('xlarge')">아주 크게</button>
+          </div>
+        </div>
+        <div class="title-setting">
+          <div class="title-setting-label">튜토리얼 자동 안내<small>게임을 시작할 때 처음 안내를 보여줘요</small></div>
+          <div class="title-seg" id="seg-tutorial">
+            <button type="button" data-v="on" onclick="setTutorialAuto(true)">켜짐</button>
+            <button type="button" data-v="off" onclick="setTutorialAuto(false)">꺼짐</button>
+          </div>
+        </div>
+        <div class="title-menu" style="margin-top:14px"><button type="button" id="settings-back" class="title-btn" onclick="closeSettings()">← 돌아가기</button></div>
+      </section>
+
+      <section id="title-view-backup" hidden>
+        <h2>📦 백업 · 복원</h2>
+        <p class="title-sub" id="backup-info"></p>
+        <div class="title-menu">
+          <button type="button" id="backup-copy" class="title-btn primary" onclick="backupCopy()">📋 백업 코드 복사</button>
+          <button type="button" id="backup-file" class="title-btn" onclick="backupDownload()">📄 파일로 저장</button>
+        </div>
+        <label for="backup-text" style="display:block;margin:14px 0 6px;color:#e5e7eb;font-weight:700;font-size:.85rem;text-align:left">백업 코드 (복원할 때 여기에 붙여넣기)</label>
+        <textarea id="backup-text" rows="5" spellcheck="false" autocapitalize="off" autocomplete="off" placeholder="GBS1.xxxxxxxx.…" style="box-sizing:border-box;width:100%;padding:10px 12px;border:1px solid #514078;border-radius:11px;background:#10141d;color:#fff;font:inherit;font-size:.78rem;word-break:break-all;resize:vertical"></textarea>
+        <p id="backup-status" class="title-confirm-text" role="status" style="min-height:1.4em;margin:8px 0"></p>
+        <div class="title-menu">
+          <button type="button" id="backup-restore" class="title-btn danger" onclick="backupRestore()">📥 복원하기</button>
+          <label class="title-btn" style="cursor:pointer;text-align:center">📂 파일에서 불러오기<input type="file" id="backup-filepick" accept=".txt,text/plain" hidden onchange="backupPickFile(this)"></label>
+          <button type="button" id="backup-back" class="title-btn" onclick="showTitleView('settings')">← 돌아가기</button>
+        </div>
+      </section>
+
+      <section id="title-view-slots" hidden>
+        <h2 id="slots-title"></h2>
+        <p class="title-sub" id="slots-desc"></p>
+        <div class="title-menu" id="slots-list"></div>
+        <div class="title-menu" style="margin-top:12px"><button type="button" class="title-btn" onclick="showTitleView(slotsBack)">← 돌아가기</button></div>
+      </section>
+
+      <section id="title-view-confirm" hidden>
+        <div class="title-logo" aria-hidden="true" style="font-size:3rem">⚠️</div>
+        <h2 id="title-confirm-title" style="margin-top:10px"></h2>
+        <p class="title-confirm-text" id="title-confirm-text"></p>
+        <div class="title-menu">
+          <button type="button" id="title-confirm-yes" class="title-btn danger"></button>
+          <button type="button" class="title-btn" onclick="cancelTitleConfirm()">취소</button>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <div id="shop-name-overlay" class="tutorial-overlay naming-overlay" hidden aria-hidden="true">
+    <div class="tutorial-backdrop"></div>
+    <section class="naming-dialog" role="dialog" aria-modal="true" aria-labelledby="shop-name-title" aria-describedby="shop-name-description" tabindex="-1">
+      <figure class="shopfront-preview"><img src="assets/shopfront-v083.webp" width="1280" height="853" alt="작업등이 켜진 작은 악기점 입구" decoding="async"><div class="shop-sign" aria-label="가게 간판 미리보기"><span id="shop-sign-name">나의 악기점</span></div><figcaption id="shop-sign-caption">이름을 입력하면 간판에 미리 보여드려요.</figcaption></figure>
+      <div class="naming-content"><p class="naming-eyebrow">YOUR FIRST WORKSHOP</p><h2 id="shop-name-title">당신의 공방은<br>어떤 이름인가요?</h2><p id="shop-name-description">오래 기억될 가게 이름을 지어주세요.</p>
+      <div id="naming-form"><label for="shop-name-input">악기점 이름</label><input id="shop-name-input" type="text" maxlength="24" autocomplete="off" placeholder="예: 달빛 공방" aria-describedby="shop-name-count" required>
+      <div class="naming-field-note"><span>최대 24자</span><span id="shop-name-count">0 / 24</span></div>
+      <div class="name-suggestions" aria-label="가게 이름 제안"><button type="button" onclick="chooseShopName('달빛 공방')">달빛 공방</button><button type="button" onclick="chooseShopName('작은 울림')">작은 울림</button><button type="button" onclick="chooseShopName('오늘의 기타')">오늘의 기타</button></div>
+      <button type="button" id="shop-name-confirm" class="naming-confirm" onclick="confirmShopName()" disabled>이 이름으로 개업하기 <span aria-hidden="true">→</span></button></div>
+      <div id="opening-message" hidden><p id="opening-welcome"></p><button type="button" class="naming-confirm" onclick="finishGrandOpening()">첫 영업 시작하기 <span aria-hidden="true">→</span></button></div>
+      </div>
+    </section>
+  </div>
+
+  <div id="tutorial-overlay" class="tutorial-overlay" hidden aria-hidden="true">
+    <div class="tutorial-backdrop"></div>
+    <section class="tutorial-dialog" role="dialog" aria-modal="true" aria-labelledby="tutorial-title" aria-describedby="tutorial-text">
+      <div class="tutorial-topline"><span id="tutorial-step-count">튜토리얼 · 1 / 11</span><button type="button" class="tutorial-close" onclick="skipTutorial()" aria-label="튜토리얼 건너뛰기">✕</button></div>
+      <div class="tutorial-icon" id="tutorial-icon">🎸</div>
+      <h2 id="tutorial-title">수리점에 오신 것을 환영합니다!</h2>
+      <p id="tutorial-text">기타와 베이스를 사서 수리한 뒤 판매하고, 손님들의 스토리 의뢰를 해결해 돈과 평판을 얻는 경영 게임입니다.</p>
+      <div class="tutorial-tip" id="tutorial-tip">안내는 1~2분 정도 걸려요. 게임 데이터는 건드리지 않으며 언제든 건너뛸 수 있어요.</div>
+      <div class="tutorial-progress"><span id="tutorial-progress-bar"></span></div>
+      <div class="tutorial-actions"><button type="button" class="tutorial-skip" onclick="skipTutorial()">건너뛰기</button><div class="tutorial-step-actions"><button type="button" id="tutorial-prev" class="tutorial-prev" onclick="moveTutorial(-1)">이전</button><button type="button" id="tutorial-next" class="tutorial-next" onclick="moveTutorial(1)">다음 →</button></div></div>
+    </section>
+  </div>
+
+  <div id="ending-overlay" class="tutorial-overlay ending-overlay" hidden aria-hidden="true">
+    <div class="tutorial-backdrop ending-backdrop"></div>
+    <section class="tutorial-dialog ending-dialog" role="dialog" aria-modal="true" aria-labelledby="ending-title">
+      <div class="ending-sparkle" aria-hidden="true">✨</div>
+      <div class="tutorial-topline"><span>엔딩 달성</span></div>
+      <div class="tutorial-icon ending-icon">🏆</div>
+      <h2 id="ending-title">국내 최고 기타·베이스 전문점</h2>
+      <p class="ending-shop-name" id="ending-shop-name"></p>
+      <p class="ending-lead" id="ending-lead">오랜 노력 끝에 업계 정상에 올랐습니다. 축하드립니다!</p>
+      <div class="ending-stats" id="ending-stats"></div>
+      <div class="ending-actions">
+        <button type="button" class="tutorial-next ending-btn-primary" onclick="closeEndingContinue()">계속 운영하기</button>
+        <button type="button" class="tutorial-skip ending-btn-secondary" onclick="closeEndingToTitle()">타이틀로</button>
+      </div>
+      <p class="ending-hint">엔딩 후에도 매장을 계속 키울 수 있어요. 칭호 「국내 최고 전문점」이 해금됩니다.</p>
+    </section>
+  </div>
+
+  <dialog id="day-review" aria-labelledby="day-review-title"><div class="day-review-content"><h2 id="day-review-title">오늘 영업을 마칠까요?</h2><div id="day-review-body"></div><div class="review-actions"><button class="btn-secondary" onclick="document.getElementById('day-review').close()">계속 운영하기</button><button class="btn-buy" onclick="finishReviewedDay()">다음 영업일 시작</button></div></div></dialog>
+  <script data-game-script src="js/core/version.js"></script>
+  <script data-game-script src="js/core/state.js"></script>
+  <script data-game-script src="js/art/instrument-art.js"></script>
+  <script data-game-script src="js/art/parts-art.js"></script>
+  <script data-game-script src="js/data/items.js"></script>
+  <script data-game-script src="js/data/catalog.js"></script>
+  <script data-game-script src="js/art/repair-memories.js"></script>
+  <script data-game-script src="js/ui/workspace.js"></script>
+  <script data-game-script src="js/engine/game.js"></script>
+  <script data-game-script src="js/engine/progress.js"></script>
+  <script data-game-script src="js/ui/ui.js"></script>
+  <script data-game-script src="js/core/backup.js"></script>
+  <script data-game-script src="js/ui/onboarding.js"></script>
+  <script data-game-script src="js/ui/menu.js"></script>
+  <script data-game-script src="js/engine/systems.js"></script>
+  <script data-game-script src="js/ui/systems-ui.js"></script>
+  <script data-game-script src="js/art/expansion-art.js"></script>
+  <script data-game-script src="js/engine/expansion.js"></script>
+  <script data-game-script src="js/ui/expansion-ui.js"></script>
+  <script data-game-script src="js/engine/simple-systems.js"></script>
+  <script data-game-script src="js/engine/workshop-v2.js"></script>
+  <script data-game-script src="js/ui/flow/navigation.js"></script>
+  <script data-game-script src="js/ui/flow/inventory.js"></script>
+  <script data-game-script src="js/ui/flow/market.js"></script>
+  <script data-game-script src="js/ui/flow/customers.js"></script>
+  <script data-game-script src="js/ui/flow/craft.js"></script>
+  <script data-game-script src="js/ui/flow/events.js"></script>
+  <script data-game-script src="js/ui/flow/management.js"></script>
+  <script data-game-script src="js/ui/flow/records.js"></script>
+  <script data-game-script src="js/ui/flow/catalog.js"></script>
+  <script data-game-script src="js/ui/flow/home.js"></script>
+  <script data-game-script src="js/ui/flow/bootstrap.js"></script>
+</body>
+</html>
