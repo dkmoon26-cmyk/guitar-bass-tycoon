@@ -1877,6 +1877,19 @@ body:not([data-root="home"]) .next-day-dock-inner{backdrop-filter:none!important
 .story-event-card .story15-recap{color:#334a3a;background:#314f3010;border-left-color:#6d8569}.story-event-card .story15-new{color:#5b492c;border-color:#9b845f;background:#fff8e4}.story-event-card .story15-story-extra .text-button{color:#37513f!important}
 
 </style>
+<style>
+/* v1.5.1: reset margins must not pin native dialogs to the top-left. */
+#system-dialog {
+  position:fixed;
+  inset:max(16px, env(safe-area-inset-top)) 16px max(16px, env(safe-area-inset-bottom));
+  margin:auto!important;
+  width:min(600px, calc(100vw - 32px))!important;
+  height:fit-content;
+  max-height:calc(100dvh - max(16px, env(safe-area-inset-top)) - max(16px, env(safe-area-inset-bottom)))!important;
+  overflow:auto;
+  overscroll-behavior:contain;
+}
+</style>
 </head>
 <body class="booting">
   <section id="startup-screen" role="status" aria-live="polite" aria-label="게임 준비 중" aria-busy="true">
@@ -2211,7 +2224,7 @@ body:not([data-root="home"]) .next-day-dock-inner{backdrop-filter:none!important
 // version.js — 업데이트할 때 가장 먼저 고치는 파일
 // GAME_VERSION : 화면에 표시되고, 서비스 워커 캐시 이름에도 쓰입니다. (올리면 옛 캐시 자동 삭제)
 // SAVE_VERSION : 저장 데이터 구조를 바꿨을 때만 +1 하고, state.js 의 SAVE_MIGRATIONS 에 변환 함수를 추가하세요.
-const GAME_VERSION = '1.5.0';
+const GAME_VERSION = '1.5.1';
 const SAVE_VERSION = 7;
 
 </script>
@@ -6870,7 +6883,7 @@ const story15CustomersBase=renderCustomers;renderCustomers=function(){story15Ens
 const story15ViewBase=flowRenderView;flowRenderView=function(){story15ViewBase();story15RenderGuide();};
 // The saved location stays intact unless the player is resuming a live guide.
 const story15LoadBase=loadSlot;loadSlot=function(n){story15LoadBase(n);story15Ensure();const g=state.operations.guide;if(g.enabled||!g.introduced)startTutorial(false);};
-const story15SellBase=sellItem;sellItem=function(id){const owned=state.inventory.find(i=>String(i.id)===String(id)),before=state.money,result=story15SellBase(id);if(owned&&!state.inventory.includes(owned)&&state.money>before){const j=story15Ensure();if(!j.milestones.firstSale)j.milestones.firstSale={day:state.day,text:owned.name};save();}return result;};
+const story15SellBase=sellItem;sellItem=function(id,...args){const owned=state.inventory.find(i=>String(i.id)===String(id)),before=state.money,result=story15SellBase(id,...args);if(owned&&!state.inventory.includes(owned)&&state.money>before){const j=story15Ensure();if(!j.milestones.firstSale)j.milestones.firstSale={day:state.day,text:owned.name};save();}return result;};
 
 </script>
   <script data-game-script>
