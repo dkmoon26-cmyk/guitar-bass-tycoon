@@ -1,10 +1,10 @@
 {
-  "version": "3.2.0",
+  "version": "3.3.0",
   "files": [
     {
-      "path": "app-bbd75b93d90e.js",
-      "bytes": 279802,
-      "sha256": "bbd75b93d90e4978221493b5e07dc433e2fae9b657e973beeae451a8f5669d69"
+      "path": "app-784adc140780.js",
+      "bytes": 290508,
+      "sha256": "784adc140780b04b1b4330efff82cb2f088f3fab31a34355697cdebb678a15d7"
     },
     {
       "path": "assets/catalog-back-v7-1021127ab85f.webp",
@@ -52,6 +52,11 @@
       "sha256": "63e2dc770117622bb83c89c5e85d6a013bf3adbe38c16bb5be7c6fd389f8721e"
     },
     {
+      "path": "assets/people-cashiers-v330-a11354e3b6ce.webp",
+      "bytes": 232318,
+      "sha256": "a11354e3b6ce9914e4c69a58dcf753975853446ffcc328c7a34d7285cec98a3b"
+    },
+    {
       "path": "assets/people-everyday-v310-dfaeccef11f3.webp",
       "bytes": 644750,
       "sha256": "dfaeccef11f3d889830f125b3c365219e6ba488edf3fdc8fd0d20ee247ac71d0"
@@ -88,13 +93,13 @@
     },
     {
       "path": "index.html",
-      "bytes": 14300,
-      "sha256": "0cff6a128b0ffacff51744ad86f93690a3e7a8d8df55b4937bd56f382e533f2e"
+      "bytes": 14383,
+      "sha256": "56332922ed37a8155eecfa776f45c806bebb123818d97a51f018938787fbb964"
     },
     {
-      "path": "style-56dd8be98e72.css",
-      "bytes": 47033,
-      "sha256": "56dd8be98e72188c653ea87d8c31bd3fe65deca091102ad908f8adaef577cd87"
+      "path": "style-f0a876c4edd0.css",
+      "bytes": 47729,
+      "sha256": "f0a876c4edd003511e0699bec8d0c9d9baf76cafb5e5759f93fc1ad5d10cd918"
     }
   ]
 }
