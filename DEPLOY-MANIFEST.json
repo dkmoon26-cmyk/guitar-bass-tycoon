@@ -1,0 +1,100 @@
+{
+  "version": "3.2.0",
+  "files": [
+    {
+      "path": "app-bbd75b93d90e.js",
+      "bytes": 279802,
+      "sha256": "bbd75b93d90e4978221493b5e07dc433e2fae9b657e973beeae451a8f5669d69"
+    },
+    {
+      "path": "assets/catalog-back-v7-1021127ab85f.webp",
+      "bytes": 751270,
+      "sha256": "1021127ab85fd5a56c69fd0a5923fdd40e04f28003a5bf98adfc13df5b0bdecb"
+    },
+    {
+      "path": "assets/catalog-v6-0252007a761a.webp",
+      "bytes": 888236,
+      "sha256": "0252007a761a47f71f25106604b753791d668fcef0021f8ae4ffc8e54c7e13c0"
+    },
+    {
+      "path": "assets/empty-cabinet-v3-78117d4d084b.webp",
+      "bytes": 229936,
+      "sha256": "78117d4d084b6df33c64d2062b4b71ddca54f083e4f1f832aa265ff81d006e2f"
+    },
+    {
+      "path": "assets/empty-rack-v7-175ac59c07a6.webp",
+      "bytes": 85654,
+      "sha256": "175ac59c07a6e3f420cd68b841921aebacbc8e29b9ff2cfdee05c4477a0930f9"
+    },
+    {
+      "path": "assets/expanded-catalog-v300-20b5148b4a01.webp",
+      "bytes": 478292,
+      "sha256": "20b5148b4a01c0947bf2e978075203f8c81899e2235144a184dfc4ceb37f9bde"
+    },
+    {
+      "path": "assets/furniture-back-e534b6506e33.webp",
+      "bytes": 412408,
+      "sha256": "e534b6506e33732082f67abd60211a28cdf228ece97f69effa76771c99fb26fd"
+    },
+    {
+      "path": "assets/furniture-d160e4b8bc72.webp",
+      "bytes": 428526,
+      "sha256": "d160e4b8bc72523b7416e101fda100b5feb71397e9f537b97a0bd667f0210cfa"
+    },
+    {
+      "path": "assets/goods-v3-4f332ed23aab.webp",
+      "bytes": 337352,
+      "sha256": "4f332ed23aab01b639727d6189787a631cee0aa311de7da2b32b3db7656be431"
+    },
+    {
+      "path": "assets/mission-instruments-v1-63e2dc770117.webp",
+      "bytes": 222874,
+      "sha256": "63e2dc770117622bb83c89c5e85d6a013bf3adbe38c16bb5be7c6fd389f8721e"
+    },
+    {
+      "path": "assets/people-everyday-v310-dfaeccef11f3.webp",
+      "bytes": 644750,
+      "sha256": "dfaeccef11f3d889830f125b3c365219e6ba488edf3fdc8fd0d20ee247ac71d0"
+    },
+    {
+      "path": "assets/people-regulars-v310-bff25052566c.webp",
+      "bytes": 626752,
+      "sha256": "bff25052566c7cbbcbfe39160da176e58c6d4febcbe180cfce5bde2e117aa62d"
+    },
+    {
+      "path": "assets/people-special-v310-2e7285a617a0.webp",
+      "bytes": 635038,
+      "sha256": "2e7285a617a0a714a6b893d8831d48e6fe252dce17a5671127f87458ec1d8237"
+    },
+    {
+      "path": "assets/people-story-v310-7fb299c30fe8.webp",
+      "bytes": 648984,
+      "sha256": "7fb299c30fe86600c83a6d1f29904284217ded62d049c6f0f5990bafb341b2f1"
+    },
+    {
+      "path": "assets/people-team-v310-594e20771393.webp",
+      "bytes": 586468,
+      "sha256": "594e2077139355ad7020b6da35014d306a4493d048af4f4ad82ab81be7436a8c"
+    },
+    {
+      "path": "assets/title-v1-6dd158a061b6.webp",
+      "bytes": 480684,
+      "sha256": "6dd158a061b6d776625e799d9ab179f34aa04bafdeeb5f84c0dbb5c5841e6256"
+    },
+    {
+      "path": "boot-10201f928d43.js",
+      "bytes": 2655,
+      "sha256": "10201f928d43539f24e08fe50f71e829db10a1e7e5596f348e9ebea5c59078ae"
+    },
+    {
+      "path": "index.html",
+      "bytes": 14300,
+      "sha256": "0cff6a128b0ffacff51744ad86f93690a3e7a8d8df55b4937bd56f382e533f2e"
+    },
+    {
+      "path": "style-56dd8be98e72.css",
+      "bytes": 47033,
+      "sha256": "56dd8be98e72188c653ea87d8c31bd3fe65deca091102ad908f8adaef577cd87"
+    }
+  ]
+}
