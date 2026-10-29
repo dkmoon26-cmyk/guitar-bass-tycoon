@@ -1,20 +1,15 @@
 {
-  "version": "3.6.0",
+  "version": "3.7.0",
   "files": [
     {
-      "path": "app-530445642958.js",
-      "bytes": 311709,
-      "sha256": "53044564295848262279bac08e92e6e5bd61e52e9f154118223b1d59e78c6b19"
+      "path": "app-e8ec935eb395.js",
+      "bytes": 317114,
+      "sha256": "e8ec935eb395af3d211e3d91dff6a309dad0a8395c98b943688c42c37c0b0d06"
     },
     {
-      "path": "assets/catalog-back-v7-1021127ab85f.webp",
-      "bytes": 751270,
-      "sha256": "1021127ab85fd5a56c69fd0a5923fdd40e04f28003a5bf98adfc13df5b0bdecb"
-    },
-    {
-      "path": "assets/catalog-v6-0252007a761a.webp",
-      "bytes": 888236,
-      "sha256": "0252007a761a47f71f25106604b753791d668fcef0021f8ae4ffc8e54c7e13c0"
+      "path": "assets/accessories-v370-6e421341ee01.webp",
+      "bytes": 191004,
+      "sha256": "6e421341ee0186512bec80a06248225974cf7c6b1320e5abc27dfdef6e2e1911"
     },
     {
       "path": "assets/drum-fixtures-v350-f0cb9b33edec.webp",
@@ -40,11 +35,6 @@
       "path": "assets/empty-rack-v7-72b7e8124350.webp",
       "bytes": 245168,
       "sha256": "72b7e8124350725475856d53d3ebf349cc5d0c5276bb1dff20b03f304ec7ccb0"
-    },
-    {
-      "path": "assets/expanded-catalog-v300-20b5148b4a01.webp",
-      "bytes": 478292,
-      "sha256": "20b5148b4a01c0947bf2e978075203f8c81899e2235144a184dfc4ceb37f9bde"
     },
     {
       "path": "assets/furniture-back-e534b6506e33.webp",
@@ -75,11 +65,6 @@
       "path": "assets/instruments-2-v340-70ef6fdb738c.webp",
       "bytes": 362166,
       "sha256": "70ef6fdb738c526d8ddcedabe5275216d49465a4f328c7f9d096925a1ebc8a21"
-    },
-    {
-      "path": "assets/mission-instruments-v1-63e2dc770117.webp",
-      "bytes": 222874,
-      "sha256": "63e2dc770117622bb83c89c5e85d6a013bf3adbe38c16bb5be7c6fd389f8721e"
     },
     {
       "path": "assets/people-cashiers-v330-a11354e3b6ce.webp",
@@ -117,14 +102,14 @@
       "sha256": "6dd158a061b6d776625e799d9ab179f34aa04bafdeeb5f84c0dbb5c5841e6256"
     },
     {
-      "path": "boot-10201f928d43.js",
-      "bytes": 2655,
-      "sha256": "10201f928d43539f24e08fe50f71e829db10a1e7e5596f348e9ebea5c59078ae"
+      "path": "boot-3a7a03c92db6.js",
+      "bytes": 4631,
+      "sha256": "3a7a03c92db6820200b1fb5f73a3874c4f4ba0509f4c986ac79a0f2eff5021fb"
     },
     {
       "path": "index.html",
-      "bytes": 14859,
-      "sha256": "4605aff05e958a843de0d7dd95cad12c91d4daf051f8ea204bfa2e6ebd720e8d"
+      "bytes": 14950,
+      "sha256": "41738ea7c36e534cc4dc7b8e8cb2961408c883d39624cb4547fc60fbabdcbbbc"
     },
     {
       "path": "style-0778823ef15e.css",
