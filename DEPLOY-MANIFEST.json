@@ -1,10 +1,10 @@
 {
-  "version": "3.7.0",
+  "version": "3.8.0",
   "files": [
     {
-      "path": "app-e8ec935eb395.js",
-      "bytes": 317114,
-      "sha256": "e8ec935eb395af3d211e3d91dff6a309dad0a8395c98b943688c42c37c0b0d06"
+      "path": "app-fa75a98882f8.js",
+      "bytes": 325280,
+      "sha256": "fa75a98882f89675432e1a48cb748e7468d9a8a5eb3b5e1e07d228971463082e"
     },
     {
       "path": "assets/accessories-v370-6e421341ee01.webp",
@@ -102,19 +102,19 @@
       "sha256": "6dd158a061b6d776625e799d9ab179f34aa04bafdeeb5f84c0dbb5c5841e6256"
     },
     {
-      "path": "boot-3a7a03c92db6.js",
-      "bytes": 4631,
-      "sha256": "3a7a03c92db6820200b1fb5f73a3874c4f4ba0509f4c986ac79a0f2eff5021fb"
+      "path": "boot-68dc825da9f3.js",
+      "bytes": 4884,
+      "sha256": "68dc825da9f30ab8993f28c71b160778e170efd1363a149b1eb3130f3ea82b41"
     },
     {
       "path": "index.html",
-      "bytes": 14950,
-      "sha256": "41738ea7c36e534cc4dc7b8e8cb2961408c883d39624cb4547fc60fbabdcbbbc"
+      "bytes": 16024,
+      "sha256": "2daf0f34925d2187fb02010197cd7c43045f1c072d89fe2cca3080230872079e"
     },
     {
-      "path": "style-0778823ef15e.css",
-      "bytes": 50794,
-      "sha256": "0778823ef15e4c7cf9a4390a1f4f9131339100b9c24e3f2a699e880645dd60a0"
+      "path": "style-845788e24717.css",
+      "bytes": 52745,
+      "sha256": "845788e24717323e4bebf2f15c983a9aef92037f3f6ce757c94fc2eefd843b8d"
     }
   ]
 }
