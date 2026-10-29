@@ -1,10 +1,10 @@
 {
-  "version": "3.3.0",
+  "version": "3.6.0",
   "files": [
     {
-      "path": "app-784adc140780.js",
-      "bytes": 290508,
-      "sha256": "784adc140780b04b1b4330efff82cb2f088f3fab31a34355697cdebb678a15d7"
+      "path": "app-530445642958.js",
+      "bytes": 311709,
+      "sha256": "53044564295848262279bac08e92e6e5bd61e52e9f154118223b1d59e78c6b19"
     },
     {
       "path": "assets/catalog-back-v7-1021127ab85f.webp",
@@ -17,14 +17,29 @@
       "sha256": "0252007a761a47f71f25106604b753791d668fcef0021f8ae4ffc8e54c7e13c0"
     },
     {
-      "path": "assets/empty-cabinet-v3-78117d4d084b.webp",
-      "bytes": 229936,
-      "sha256": "78117d4d084b6df33c64d2062b4b71ddca54f083e4f1f832aa265ff81d006e2f"
+      "path": "assets/drum-fixtures-v350-f0cb9b33edec.webp",
+      "bytes": 476468,
+      "sha256": "f0cb9b33edec82db1c57884907eda9e6bbc4254d1e10fe086f9da01690482a24"
     },
     {
-      "path": "assets/empty-rack-v7-175ac59c07a6.webp",
-      "bytes": 85654,
-      "sha256": "175ac59c07a6e3f420cd68b841921aebacbc8e29b9ff2cfdee05c4477a0930f9"
+      "path": "assets/drum-product-v350-ba9fa2bedda7.webp",
+      "bytes": 361754,
+      "sha256": "ba9fa2bedda7ed5d9a643bab81b80698daa20ef2467a3889ecf3d4111475d6ad"
+    },
+    {
+      "path": "assets/drummer-v350-6b56b2977b4c.webp",
+      "bytes": 366472,
+      "sha256": "6b56b2977b4c156d0c934331bb29842dda11c5ae66129f42bff04fac5e3d298d"
+    },
+    {
+      "path": "assets/empty-cabinet-v3-21e9e5f114e1.webp",
+      "bytes": 266882,
+      "sha256": "21e9e5f114e16c280339be94ab8cb29dd77e352da813c388322e71da35e4f1d8"
+    },
+    {
+      "path": "assets/empty-rack-v7-72b7e8124350.webp",
+      "bytes": 245168,
+      "sha256": "72b7e8124350725475856d53d3ebf349cc5d0c5276bb1dff20b03f304ec7ccb0"
     },
     {
       "path": "assets/expanded-catalog-v300-20b5148b4a01.webp",
@@ -45,6 +60,21 @@
       "path": "assets/goods-v3-4f332ed23aab.webp",
       "bytes": 337352,
       "sha256": "4f332ed23aab01b639727d6189787a631cee0aa311de7da2b32b3db7656be431"
+    },
+    {
+      "path": "assets/instruments-0-v340-76938297645a.webp",
+      "bytes": 353730,
+      "sha256": "76938297645a603ecc59400e92d7483ffc95993d6b67ed721cc69b015e6de86f"
+    },
+    {
+      "path": "assets/instruments-1-v340-6150d2118a3e.webp",
+      "bytes": 388338,
+      "sha256": "6150d2118a3ea9439722ef7778c10b6db4d3f1a998cf9f1fa6890e814c643c2c"
+    },
+    {
+      "path": "assets/instruments-2-v340-70ef6fdb738c.webp",
+      "bytes": 362166,
+      "sha256": "70ef6fdb738c526d8ddcedabe5275216d49465a4f328c7f9d096925a1ebc8a21"
     },
     {
       "path": "assets/mission-instruments-v1-63e2dc770117.webp",
@@ -93,13 +123,13 @@
     },
     {
       "path": "index.html",
-      "bytes": 14383,
-      "sha256": "56332922ed37a8155eecfa776f45c806bebb123818d97a51f018938787fbb964"
+      "bytes": 14859,
+      "sha256": "4605aff05e958a843de0d7dd95cad12c91d4daf051f8ea204bfa2e6ebd720e8d"
     },
     {
-      "path": "style-f0a876c4edd0.css",
-      "bytes": 47729,
-      "sha256": "f0a876c4edd003511e0699bec8d0c9d9baf76cafb5e5759f93fc1ad5d10cd918"
+      "path": "style-0778823ef15e.css",
+      "bytes": 50794,
+      "sha256": "0778823ef15e4c7cf9a4390a1f4f9131339100b9c24e3f2a699e880645dd60a0"
     }
   ]
 }
