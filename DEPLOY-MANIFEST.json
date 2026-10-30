@@ -1,10 +1,10 @@
 {
-  "version": "3.9.0",
+  "version": "3.10.0",
   "files": [
     {
-      "path": "app-55393d8af912.js",
-      "bytes": 334780,
-      "sha256": "55393d8af91213174f0c9eef4215f3f227bcf025356c6a352ad7ddf288190ab6"
+      "path": "app-46e3134b20fd.js",
+      "bytes": 337517,
+      "sha256": "46e3134b20fd10a763fcd83dd037f62081a7807305f47051b2a53b5fb7f69e25"
     },
     {
       "path": "assets/accessories-v370-6e421341ee01.webp",
@@ -97,24 +97,29 @@
       "sha256": "594e2077139355ad7020b6da35014d306a4493d048af4f4ad82ab81be7436a8c"
     },
     {
+      "path": "assets/team-checkout-v3100-5f52f0283333.webp",
+      "bytes": 274714,
+      "sha256": "5f52f02833338aa256fb732f0ef9e865d47958563201853697ed27de65d3a758"
+    },
+    {
       "path": "assets/title-v1-6dd158a061b6.webp",
       "bytes": 480684,
       "sha256": "6dd158a061b6d776625e799d9ab179f34aa04bafdeeb5f84c0dbb5c5841e6256"
     },
     {
-      "path": "boot-68dc825da9f3.js",
-      "bytes": 4884,
-      "sha256": "68dc825da9f30ab8993f28c71b160778e170efd1363a149b1eb3130f3ea82b41"
+      "path": "boot-a35f22f38436.js",
+      "bytes": 5573,
+      "sha256": "a35f22f3843696e5ac6d4b8cf7727baa7973ae9decb2118c8f56090b641f3bdb"
     },
     {
       "path": "index.html",
-      "bytes": 16337,
-      "sha256": "9224c3e68f0a1a0a50ad8adf654273b59d96355d798179a615498f6d08e28326"
+      "bytes": 16484,
+      "sha256": "b0c5f51347aa9a0c07e5a8c1d6e512be3abb6c2ffe295cfb97d5f3806364036e"
     },
     {
-      "path": "style-4664413208bc.css",
-      "bytes": 58531,
-      "sha256": "4664413208bc871330f1957108a1ef55f2088d67dbdde239f5e80402c86e0a10"
+      "path": "style-fd4049a98ce1.css",
+      "bytes": 59351,
+      "sha256": "fd4049a98ce1077e29f703fe67f77d5a8aa705c2821560481ada9689537fff5d"
     }
   ]
 }
