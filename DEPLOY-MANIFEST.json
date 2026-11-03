@@ -1,10 +1,10 @@
 {
-  "version": "3.15.0",
+  "version": "3.16.0",
   "files": [
     {
-      "path": "app-8e909b280896.js",
-      "bytes": 352796,
-      "sha256": "8e909b280896dac337f29576fa5ec77116116b106510b2c205b8cfc7ebb90d17"
+      "path": "app-c28ec7b1817d.js",
+      "bytes": 354036,
+      "sha256": "c28ec7b1817de98f42f473abd380ecd2a8061470aba1294e96d2f1d823b52984"
     },
     {
       "path": "assets/accessories-v370-6e421341ee01.webp",
@@ -174,12 +174,12 @@
     {
       "path": "index.html",
       "bytes": 34150,
-      "sha256": "ec67c52d47d2ac8f1a7656e5844e921b97d5a1a6fcc81e81ab0be00adc285bc2"
+      "sha256": "0bc90ef0c9d309d28cd1b6702b0dca15013475fcf987a5ae0c00f29698e87318"
     },
     {
-      "path": "style-9de3b13c64a7.css",
-      "bytes": 86945,
-      "sha256": "9de3b13c64a736cd2ec36a4474cff4948971bdb2f4be4af0edc4332b8e2bf605"
+      "path": "style-308f94675113.css",
+      "bytes": 87588,
+      "sha256": "308f946751130632ad2123f6f306fa241533256c8726854aab900b5e1ce7da76"
     }
   ]
 }
