@@ -1,10 +1,10 @@
 {
-  "version": "3.11.0",
+  "version": "3.12.0",
   "files": [
     {
-      "path": "app-023abf08bdee.js",
-      "bytes": 294789,
-      "sha256": "023abf08bdee4420b253088e015ae568c456f88748be30140ec8c5e653816e1b"
+      "path": "app-57f9db86cdb2.js",
+      "bytes": 336060,
+      "sha256": "57f9db86cdb2294e0b013e01d463d67c8b27b08ec1d590b3f8409839c17d1f01"
     },
     {
       "path": "assets/accessories-v370-6e421341ee01.webp",
@@ -102,19 +102,69 @@
       "sha256": "6dd158a061b6d776625e799d9ab179f34aa04bafdeeb5f84c0dbb5c5841e6256"
     },
     {
+      "path": "assets/walk-drummer-v3120-0eedadf26ade.webp",
+      "bytes": 307480,
+      "sha256": "0eedadf26ade67000bec2bc8d4525d013aa9e50e281061214dc969b24c3d355e"
+    },
+    {
+      "path": "assets/walk-everyday-a-v3120-01de2b6d6bf1.webp",
+      "bytes": 424962,
+      "sha256": "01de2b6d6bf159afc2827602ea683d18970dfcf3db37520f047bfee4b93f6087"
+    },
+    {
+      "path": "assets/walk-everyday-b-v3120-261a72d7eec5.webp",
+      "bytes": 439230,
+      "sha256": "261a72d7eec59a3cccf79acb8c67eff7677b775f6963757bfe1c0af64096c52e"
+    },
+    {
+      "path": "assets/walk-regulars-a-v3120-ea82ae2ef2c4.webp",
+      "bytes": 303770,
+      "sha256": "ea82ae2ef2c489d7db3850eb61510477943b3e3aa4c5248f25a8244565d6315d"
+    },
+    {
+      "path": "assets/walk-regulars-b-v3120-cf4d3049ceab.webp",
+      "bytes": 462006,
+      "sha256": "cf4d3049ceab88c2806d7c1510a8b0e69494cf4a66c5073d776dd0c8f936fe1b"
+    },
+    {
+      "path": "assets/walk-special-a-v3120-c8285d0d99d5.webp",
+      "bytes": 315958,
+      "sha256": "c8285d0d99d5160bc604fc414f6b5d3b8e523a52cb79bb8aad2f404467512625"
+    },
+    {
+      "path": "assets/walk-special-b-v3120-77d3225194fc.webp",
+      "bytes": 414572,
+      "sha256": "77d3225194fc7027b1bd713c37aa6ebc6aea9c50be9d0e7e4eb204eaaecd28ef"
+    },
+    {
+      "path": "assets/walk-story-a-v3120-0e766144609e.webp",
+      "bytes": 338742,
+      "sha256": "0e766144609e5160572286f086b03b05783a95ebea243f3a3d5c941b2e5161a8"
+    },
+    {
+      "path": "assets/walk-story-b-v3120-f5cb829bb27f.webp",
+      "bytes": 382530,
+      "sha256": "f5cb829bb27fc43c6efcd85d2b058a47d40da274e8a6b8ddf32a4071a7126d29"
+    },
+    {
+      "path": "assets/walk-team-v3120-8cbc8872bbdc.webp",
+      "bytes": 635104,
+      "sha256": "8cbc8872bbdcafd66f87538a4330eadf64d8c344a61ad7f88a19ffcfacba91ff"
+    },
+    {
       "path": "boot-17e3cce18ae6.js",
       "bytes": 6234,
       "sha256": "17e3cce18ae677177da693d463b2467a5862323b164c21228f8a7188c3ffa815"
     },
     {
       "path": "index.html",
-      "bytes": 28554,
-      "sha256": "0d229c9ee1131350cda933895b849e1e5c42ba8e2fb1961da4f3bd20b70f081e"
+      "bytes": 29370,
+      "sha256": "2169c703337c5bf36db7865d2da73c06dba81ddc0405416c21a2829fef2a1fda"
     },
     {
-      "path": "style-f891911b968b.css",
-      "bytes": 60458,
-      "sha256": "f891911b968b5d1bc178bd5bbd8518c899a2323c1a47a40bdd2a98790b6bfc18"
+      "path": "style-f665cca8518d.css",
+      "bytes": 60821,
+      "sha256": "f665cca8518ddcb4e40c84469b755d9c1617d9a48882ca9b1bd000c5e3ad16b7"
     }
   ]
 }
