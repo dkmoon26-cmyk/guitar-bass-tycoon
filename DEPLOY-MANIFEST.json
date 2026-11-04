@@ -1,15 +1,25 @@
 {
-  "version": "3.16.0",
+  "version": "3.19.0",
   "files": [
     {
-      "path": "app-c28ec7b1817d.js",
-      "bytes": 354036,
-      "sha256": "c28ec7b1817de98f42f473abd380ecd2a8061470aba1294e96d2f1d823b52984"
+      "path": "app-a33d604b8fff.js",
+      "bytes": 612916,
+      "sha256": "a33d604b8fff0607a85830c3c9a9b69c322f6ce05cd2e445b70494067cde9655"
+    },
+    {
+      "path": "assets/OFL-NotoSansCJK.txt",
+      "bytes": 14712,
+      "sha256": "849f4ea9c214fa4ac3593b770c699f387534b11ce671264c1b10d85bdcb5997b"
     },
     {
       "path": "assets/accessories-v370-6e421341ee01.webp",
       "bytes": 191004,
       "sha256": "6e421341ee0186512bec80a06248225974cf7c6b1320e5abc27dfdef6e2e1911"
+    },
+    {
+      "path": "assets/atelier-v3180-ef8eadf04a15.webp",
+      "bytes": 441484,
+      "sha256": "ef8eadf04a15c43c24d74d219f21e0ba853546af8fe1443ce88966be37423d37"
     },
     {
       "path": "assets/audition-v3130-b3c122779665.webp",
@@ -82,6 +92,21 @@
       "sha256": "70ef6fdb738c526d8ddcedabe5275216d49465a4f328c7f9d096925a1ebc8a21"
     },
     {
+      "path": "assets/interior-v3180-57e5c32a0863.webp",
+      "bytes": 284924,
+      "sha256": "57e5c32a0863652762ab31b9b1b9fc3a7ee242bd00f21c9d9ef0a51fb8adb67a"
+    },
+    {
+      "path": "assets/noto-kr-bold.woff",
+      "bytes": 1481844,
+      "sha256": "6a272968149926a753492ee158a96213908300bfa0d6c9d6eabbcd0ef70dff75"
+    },
+    {
+      "path": "assets/noto-kr-regular.woff",
+      "bytes": 1398924,
+      "sha256": "61149cde8988ebb67270fb4059564da89ed8646887f23ffc13d868519d6bc9a6"
+    },
+    {
       "path": "assets/people-everyday-v310-dfaeccef11f3.webp",
       "bytes": 644750,
       "sha256": "dfaeccef11f3d889830f125b3c365219e6ba488edf3fdc8fd0d20ee247ac71d0"
@@ -115,6 +140,11 @@
       "path": "assets/title-v1-6dd158a061b6.webp",
       "bytes": 480684,
       "sha256": "6dd158a061b6d776625e799d9ab179f34aa04bafdeeb5f84c0dbb5c5841e6256"
+    },
+    {
+      "path": "assets/vip-v3180-24079dc85ab0.webp",
+      "bytes": 595488,
+      "sha256": "24079dc85ab0555970e2d324fd06eb3ba23f7220e343cc3a30e506a846d44394"
     },
     {
       "path": "assets/walk-drummer-v3120-0eedadf26ade.webp",
@@ -167,19 +197,24 @@
       "sha256": "8cbc8872bbdcafd66f87538a4330eadf64d8c344a61ad7f88a19ffcfacba91ff"
     },
     {
+      "path": "assets/wall-details-v3190-df994cbeb69c.webp",
+      "bytes": 324114,
+      "sha256": "df994cbeb69c9b447c13c26f9919cf850e3b3af961765d01cb9f92d1679c2880"
+    },
+    {
       "path": "boot-17e3cce18ae6.js",
       "bytes": 6234,
       "sha256": "17e3cce18ae677177da693d463b2467a5862323b164c21228f8a7188c3ffa815"
     },
     {
       "path": "index.html",
-      "bytes": 34150,
-      "sha256": "0bc90ef0c9d309d28cd1b6702b0dca15013475fcf987a5ae0c00f29698e87318"
+      "bytes": 35940,
+      "sha256": "811429424008b7af689664fdbbb36aedd4f2db7e1fd82f5ba8e1817926e761e0"
     },
     {
-      "path": "style-308f94675113.css",
-      "bytes": 87588,
-      "sha256": "308f946751130632ad2123f6f306fa241533256c8726854aab900b5e1ce7da76"
+      "path": "style-c77cd99bf9e8.css",
+      "bytes": 109467,
+      "sha256": "c77cd99bf9e8868eca71f19d6bee8f93975f2832bcafd577b0302ea6344675db"
     }
   ]
 }
