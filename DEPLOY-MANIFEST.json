@@ -1,10 +1,12 @@
 {
-  "version": "3.19.0",
+  "version": "3.23.1",
+  "schema": 28,
+  "edition": "normal",
   "files": [
     {
-      "path": "app-a33d604b8fff.js",
-      "bytes": 612916,
-      "sha256": "a33d604b8fff0607a85830c3c9a9b69c322f6ce05cd2e445b70494067cde9655"
+      "path": "app-411ca8276e28.js",
+      "bytes": 754363,
+      "sha256": "411ca8276e28327d668b9f97f5626180ef85371b46c62d16f96f04d3a00f5d49"
     },
     {
       "path": "assets/OFL-NotoSansCJK.txt",
@@ -15,6 +17,11 @@
       "path": "assets/accessories-v370-6e421341ee01.webp",
       "bytes": 191004,
       "sha256": "6e421341ee0186512bec80a06248225974cf7c6b1320e5abc27dfdef6e2e1911"
+    },
+    {
+      "path": "assets/acoustics-v3200-eee20c1b399a.webp",
+      "bytes": 276428,
+      "sha256": "eee20c1b399ac7dfb4ab2368814a03431bb27e301a466c5cd20aa7a4be2c30d1"
     },
     {
       "path": "assets/atelier-v3180-ef8eadf04a15.webp",
@@ -47,11 +54,6 @@
       "sha256": "ba9fa2bedda7ed5d9a643bab81b80698daa20ef2467a3889ecf3d4111475d6ad"
     },
     {
-      "path": "assets/drummer-v350-6b56b2977b4c.webp",
-      "bytes": 366472,
-      "sha256": "6b56b2977b4c156d0c934331bb29842dda11c5ae66129f42bff04fac5e3d298d"
-    },
-    {
       "path": "assets/empty-cabinet-v3-21e9e5f114e1.webp",
       "bytes": 266882,
       "sha256": "21e9e5f114e16c280339be94ab8cb29dd77e352da813c388322e71da35e4f1d8"
@@ -77,6 +79,11 @@
       "sha256": "4f332ed23aab01b639727d6189787a631cee0aa311de7da2b32b3db7656be431"
     },
     {
+      "path": "assets/horizontal-v3200-234dc2c3c9be.webp",
+      "bytes": 588704,
+      "sha256": "234dc2c3c9be6d4e6511027fefff9223641a1aee80d515a76d048ec17fb77236"
+    },
+    {
       "path": "assets/instruments-0-v340-76938297645a.webp",
       "bytes": 353730,
       "sha256": "76938297645a603ecc59400e92d7483ffc95993d6b67ed721cc69b015e6de86f"
@@ -97,6 +104,16 @@
       "sha256": "57e5c32a0863652762ab31b9b1b9fc3a7ee242bd00f21c9d9ef0a51fb8adb67a"
     },
     {
+      "path": "assets/lounge-v3200-343dd21133c5.webp",
+      "bytes": 486156,
+      "sha256": "343dd21133c5f3bb5ac5eb826cbb63f37a851891029f4ca0ac2835ad2837d05f"
+    },
+    {
+      "path": "assets/materials-v3230-8b17c419e92a.webp",
+      "bytes": 298016,
+      "sha256": "8b17c419e92af32fd1ffc80ddd97eacbe7490ac0d7615dbb82c6d5ef0fe709d4"
+    },
+    {
       "path": "assets/noto-kr-bold.woff",
       "bytes": 1481844,
       "sha256": "6a272968149926a753492ee158a96213908300bfa0d6c9d6eabbcd0ef70dff75"
@@ -107,34 +124,19 @@
       "sha256": "61149cde8988ebb67270fb4059564da89ed8646887f23ffc13d868519d6bc9a6"
     },
     {
-      "path": "assets/people-everyday-v310-dfaeccef11f3.webp",
-      "bytes": 644750,
-      "sha256": "dfaeccef11f3d889830f125b3c365219e6ba488edf3fdc8fd0d20ee247ac71d0"
+      "path": "assets/people-v3200-2dd07d4aae91.webp",
+      "bytes": 670218,
+      "sha256": "2dd07d4aae9152459990994c915c515603f778986a856b42587a9188c8a27b48"
     },
     {
-      "path": "assets/people-regulars-v310-bff25052566c.webp",
-      "bytes": 626752,
-      "sha256": "bff25052566c7cbbcbfe39160da176e58c6d4febcbe180cfce5bde2e117aa62d"
+      "path": "assets/premium-showcase-v3220-aefe7b18f3e1.webp",
+      "bytes": 169482,
+      "sha256": "aefe7b18f3e1e1df563840b3c5a5bd12fc9b9abbf07dba3c06d8f4f5371e4248"
     },
     {
-      "path": "assets/people-special-v310-2e7285a617a0.webp",
-      "bytes": 635038,
-      "sha256": "2e7285a617a0a714a6b893d8831d48e6fe252dce17a5671127f87458ec1d8237"
-    },
-    {
-      "path": "assets/people-story-v310-7fb299c30fe8.webp",
-      "bytes": 648984,
-      "sha256": "7fb299c30fe86600c83a6d1f29904284217ded62d049c6f0f5990bafb341b2f1"
-    },
-    {
-      "path": "assets/people-team-v310-594e20771393.webp",
-      "bytes": 586468,
-      "sha256": "594e2077139355ad7020b6da35014d306a4493d048af4f4ad82ab81be7436a8c"
-    },
-    {
-      "path": "assets/team-checkout-v3100-5f52f0283333.webp",
-      "bytes": 274714,
-      "sha256": "5f52f02833338aa256fb732f0ef9e865d47958563201853697ed27de65d3a758"
+      "path": "assets/props-v3230-70ac976db454.webp",
+      "bytes": 400966,
+      "sha256": "70ac976db454369f7250a184cd5a425ed2df91e694cb10e4bfc2727bdb42b903"
     },
     {
       "path": "assets/title-v1-6dd158a061b6.webp",
@@ -202,19 +204,19 @@
       "sha256": "df994cbeb69c9b447c13c26f9919cf850e3b3af961765d01cb9f92d1679c2880"
     },
     {
-      "path": "boot-17e3cce18ae6.js",
-      "bytes": 6234,
-      "sha256": "17e3cce18ae677177da693d463b2467a5862323b164c21228f8a7188c3ffa815"
+      "path": "boot-75e32368ce9b.js",
+      "bytes": 6431,
+      "sha256": "75e32368ce9b67ec73e684673b71a5918c430dcec09d14337a5358ce135836ad"
     },
     {
       "path": "index.html",
-      "bytes": 35940,
-      "sha256": "811429424008b7af689664fdbbb36aedd4f2db7e1fd82f5ba8e1817926e761e0"
+      "bytes": 26907,
+      "sha256": "05b0073a3ed2c729b967f35431db806a65d518e697558b5be527cb4f967d2e87"
     },
     {
-      "path": "style-c77cd99bf9e8.css",
-      "bytes": 109467,
-      "sha256": "c77cd99bf9e8868eca71f19d6bee8f93975f2832bcafd577b0302ea6344675db"
+      "path": "style-e56b0279b70a.css",
+      "bytes": 117541,
+      "sha256": "e56b0279b70a8bdbc167448154ce2e3a1750312183023da5bd330808f749e3cb"
     }
   ]
 }
